@@ -1,0 +1,15 @@
+set terminal pdf
+set output "Plot.pdf"
+
+set datafile separator ","
+set autoscale fix
+set key outside right center
+
+set title "Mean Square Displacement - gas Argon"
+set xlabel "time"
+set ylabel "<x^2> 
+
+plot 'Correlation.csv' using 1:2 with lines linetype 2 notitle
+# plot 'MSD-all.csv' using 1:2 with lines linetype 1 notitle, '' using 1:3 with lines linetype 3 notitle
+
+pause 0

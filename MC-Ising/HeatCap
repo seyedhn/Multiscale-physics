@@ -1,0 +1,17 @@
+set terminal pdf
+set output "HeatCap.pdf"
+
+
+set datafile separator ","
+set autoscale fix
+set key outside right center
+
+set title "HeatCapacity - Ising Model"
+set xlabel "T"
+set ylabel "C_V"
+
+
+# smooth bezier (smoothes out the fluctuations. Use instead of 'with lines')
+plot 'HeatCapacity.csv' using 1:6 with lines linetype 2 notitle
+
+pause 0

@@ -1,0 +1,19 @@
+set terminal pdf
+set output "Corr-liquid.pdf"
+
+
+set datafile separator ","
+set autoscale fix
+set key outside right center
+
+set title "Correlation Function - liquid Argon"
+set xlabel "r"
+set ylabel "g(r)"
+
+
+# smooth bezier (smoothes out the fluctuations. Use instead of 'with lines')
+plot 'Correlation-liquid.csv' using 1:2 with lines linetype 3 notitle
+
+
+
+pause 0
